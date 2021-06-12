@@ -57,3 +57,25 @@ p only_vowels?("aaoeee")  # => true
 p only_vowels?("iou")     # => true
 p only_vowels?("cat")     # => false
 p only_vowels?("over")    # => false
+
+p "Exercise 4"
+
+# Write a method, filter_lengths(strings, length), that accepts an array of strings
+# and a length as args. The method should return an array containing the strings
+# that have at least the given length. The length argument should be optional; if no length
+# is passed in, then 5 should be used as the length.
+
+def filter_lengths(strings, length = 5)
+    words = []
+    strings.each do |word|
+        if word.length >= length
+            words << word
+        end
+    end
+    return words
+end
+
+p filter_lengths(["pear", "dragonfruit", "fig", "clementine"], 4)   # => ["pear", "dragonfruit", "clementine"]
+p filter_lengths(["pear", "dragonfruit", "fig", "clementine"])      # => ["dragonfruit", "clementine"]
+p filter_lengths(["cat", "dog", "capybara", "mouse"], 7)            # => ["capybara"]
+p filter_lengths(["cat", "dog", "capybara", "mouse"])               # => ["capybara", "mouse"]
