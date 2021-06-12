@@ -79,3 +79,39 @@ p filter_lengths(["pear", "dragonfruit", "fig", "clementine"], 4)   # => ["pear"
 p filter_lengths(["pear", "dragonfruit", "fig", "clementine"])      # => ["dragonfruit", "clementine"]
 p filter_lengths(["cat", "dog", "capybara", "mouse"], 7)            # => ["capybara"]
 p filter_lengths(["cat", "dog", "capybara", "mouse"])               # => ["capybara", "mouse"]
+
+p "Exercise 5"
+
+# Write a method, max_inject(arr), that accepts any amount of numbers arguments and returns
+# the largest number. Solve this using the built-in inject.
+
+def max_inject(*arr)
+    arr.inject do |acc, el|
+        if el > acc
+            el
+        else
+            acc
+        end
+    end
+end
+
+p max_inject(1, -4, 0, 7, 5)  # => 7
+p max_inject(30, 28, 18)      # => 30
+
+p "Exercise 6"
+
+# Write a method, union, that accepts any number of arrays as arguments.
+# The method should return an array containing all elements of the given arrays.
+
+def union(*arrays)
+    arr = []
+    arrays.each do |el|
+        el.each do |elem|
+            arr << elem
+        end
+    end
+    return arr
+end
+
+p union(["a", "b"], [1, 2, 3]) # => ["a", "b", 1, 2, 3]
+p union(["x", "y"], [true, false], [20, 21, 23]) # => ["x", "y", true, false, 20, 21, 23]
