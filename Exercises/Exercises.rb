@@ -46,3 +46,14 @@ people_2 = [
     {name: "Bill", age: 16}
 ]
 p adult_in_group?(people_2)    # => false
+
+p "Exercise 3"
+
+def only_vowels?(str)
+    str.split("").all? { |letter| letter == "a" || letter == "e" || letter == "i" || letter == "o" || letter == "u"}
+end
+
+p only_vowels?("aaoeee")  # => true
+p only_vowels?("iou")     # => true
+p only_vowels?("cat")     # => false
+p only_vowels?("over")    # => false
