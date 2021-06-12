@@ -1,5 +1,5 @@
 sym = :hello
 str = "hello"
 
-p sym
-p str
+p sym.length
+p str.length
