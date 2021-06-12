@@ -104,14 +104,33 @@ p "Exercise 6"
 # The method should return an array containing all elements of the given arrays.
 
 def union(*arrays)
-    arr = []
-    arrays.each do |el|
-        el.each do |elem|
-            arr << elem
-        end
-    end
-    return arr
+    arrays.flatten
 end
 
 p union(["a", "b"], [1, 2, 3]) # => ["a", "b", 1, 2, 3]
 p union(["x", "y"], [true, false], [20, 21, 23]) # => ["x", "y", true, false, 20, 21, 23]
+
+p "Exercise 7"
+
+# Write a method, multi_dimensional_sum(array), that accepts a multidimensional array as an arg 
+# and returns the sum of all numbers in the array.
+
+def multi_dimensional_sum(array)
+    array.flatten.sum
+end
+
+arr_1 = [
+    [4, 3, 1],
+    [8, 1],
+    [2]
+]
+
+p multi_dimensional_sum(arr_1)    # => 19
+
+arr_2 = [
+    [ [3, 6], [7] ],
+    [ [5, 2], 1 ]
+]
+
+p multi_dimensional_sum(arr_2)    # => 24
+
